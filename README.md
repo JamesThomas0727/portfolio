@@ -6,7 +6,7 @@
 
 💞️ I’m looking to collaborate with a person in USA who can work with me on Upwork platform.
 
-📫 How to reach me : Gmail address: jamesthomasdev2001@gmail.com
+📫 How to reach me : Gmail address: jamesthomasdev2001@gmail.com, xunandev2001@gmail.com
 
 😄 Pronouns: he/him
 
