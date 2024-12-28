@@ -5,7 +5,6 @@
  */
 const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
-    id: Number,
     url: String,
     stack: Array,
     price: Number,

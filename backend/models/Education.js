@@ -5,7 +5,6 @@
  */
 const mongoose = require('mongoose');
 const EducationSchema = new mongoose.Schema({
-    id: Number,
     what: String,
     description: String,
     where: {

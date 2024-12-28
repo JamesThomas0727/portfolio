@@ -5,7 +5,6 @@
  */
 const mongoose = require('mongoose');
 const SkillSchema = new mongoose.Schema({
-    id: Number,
     skill: String,
     level: Number,
     avatar: String,

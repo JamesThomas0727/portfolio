@@ -5,7 +5,6 @@
  */
 const mongoose = require('mongoose');
 const ContactSchema = new mongoose.Schema({
-    id: Number,
     url: String,
     type: String,
 });

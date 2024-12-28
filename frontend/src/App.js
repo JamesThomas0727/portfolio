@@ -6,11 +6,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <div className="App">
-          <header className="App-header">
+        <Route>
+          {/* <div className="App">
+            <header className="App-header">
 
-          </header>
-        </div>
+            </header>
+          </div> */}
+        </Route>
       </Routes>
     </BrowserRouter>
   );

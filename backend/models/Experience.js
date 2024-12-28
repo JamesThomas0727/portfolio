@@ -5,7 +5,6 @@
  */
 const mongoose = require('mongoose');
 const ExperienceSchema = new mongoose.Schema({
-    id: Number,
     what: String,
     where: String,
     projects: Array,
