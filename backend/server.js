@@ -74,6 +74,7 @@ app.get('/contacts', async (req, res) => {
     }
 });
 
+//////////////////////////////////////////////////////////////
 app.listen(port, () => {
     console.log(`Server running at ${host}:${port}`)
 });
