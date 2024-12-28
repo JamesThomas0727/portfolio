@@ -6,9 +6,10 @@
 const mongoose = require('mongoose');
 const SkillSchema = new mongoose.Schema({
     id: Number,
-    name: String,
+    skill: String,
     level: Number,
     avatar: String,
+    category: String,
 });
 const SkillModel = mongoose.model("skills", SkillSchema);
 module.exports = SkillModel;
