@@ -6,10 +6,11 @@
 import React, { useState, useEffect } from 'react'
 
 import LoadingPage from './LoadingPage';
+import { LandingLayout } from '../layouts';
 //==================================================================
 
 export default function LandingPage() {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
@@ -23,9 +24,9 @@ export default function LandingPage() {
             {isLoading ? (
                 <LoadingPage />
             ) : (
-                <>
-                    <div>LandingPage</div>
-                </>
+                <LandingLayout>
+                    <></>
+                </LandingLayout>
             )
             }
         </>
