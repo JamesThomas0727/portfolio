@@ -13,5 +13,5 @@ const ExperienceSchema = new mongoose.Schema({
     from: { type: Date, default: Date.now },
     to: { type: Date, default: Date.now },
 });
-const ExperienceModel = mongoose.model("experience", ExperienceSchema);
+const ExperienceModel = mongoose.model("experiences", ExperienceSchema);
 module.exports = ExperienceModel;

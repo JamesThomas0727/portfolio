@@ -16,5 +16,5 @@ const EducationSchema = new mongoose.Schema({
     from: { type: Date, default: Date.now },
     to: { type: Date, default: Date.now },
 });
-const EducationModel = mongoose.model("education", EducationSchema);
+const EducationModel = mongoose.model("educations", EducationSchema);
 module.exports = EducationModel;

@@ -46,7 +46,7 @@ app.get('/skills', async (req, res) => {
     }
 });
 
-app.get('/education', async (req, res) => {
+app.get('/educations', async (req, res) => {
     try {
         const education = await EducationModel.find();
         res.json(education);
@@ -55,7 +55,7 @@ app.get('/education', async (req, res) => {
     }
 });
 
-app.get('/experience', async (req, res) => {
+app.get('/experiences', async (req, res) => {
     try {
         const experience = await ExperienceModel.find();
         res.json(experience);
