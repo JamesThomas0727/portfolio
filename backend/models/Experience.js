@@ -5,11 +5,11 @@
  */
 const mongoose = require('mongoose');
 const ExperienceSchema = new mongoose.Schema({
-    what: String,
-    where: String,
-    projects: Array,
-    description: String,
-    from: { type: Date, default: Date.now },
+    what: { type: String, required: true },
+    where: { type: String, required: true },
+    projects: { type: Array },
+    description: { type: String },
+    from: { type: Date, default: Date.now, required: true },
     to: { type: Date, default: Date.now },
 });
 const ExperienceModel = mongoose.model("experiences", ExperienceSchema);

@@ -5,10 +5,10 @@
  */
 const mongoose = require('mongoose');
 const SkillSchema = new mongoose.Schema({
-    skill: String,
-    level: Number,
-    avatar: String,
-    category: String,
+    skill: { type: String, required: true, unique: true },
+    level: { type: Number, required: true },
+    avatar: { type: String },
+    category: { type: String },
 });
 const SkillModel = mongoose.model("skills", SkillSchema);
 module.exports = SkillModel;

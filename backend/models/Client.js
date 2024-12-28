@@ -5,9 +5,9 @@
  */
 const mongoose = require('mongoose');
 const ClientSchema = new mongoose.Schema({
-    url: String,
-    name: String,
-    country: String,
+    url: { type: Array, required: true, unique: true },
+    name: { type: String },
+    country: { type: String },
 });
 const ClientModel = mongoose.model("clients", ClientSchema);
 module.exports = ClientModel;

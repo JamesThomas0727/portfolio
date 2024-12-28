@@ -5,8 +5,8 @@
  */
 const mongoose = require('mongoose');
 const ContactSchema = new mongoose.Schema({
-    url: String,
-    type: String,
+    url: { type: String, required: true, unique: true },
+    type: { type: String, required: true },
 });
 const ContactModel = mongoose.model("contacts", ContactSchema);
 module.exports = ContactModel;

@@ -5,18 +5,14 @@
  */
 const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
-    url: String,
-    stack: Array,
-    price: Number,
-    avatar: String,
-    category: Array,
-    description: String,
-    client: {
-        url: String,
-        name: String,
-        country: String,
-    },
-    from: { type: Date, default: Date.now },
+    url: { type: String, required: true },
+    stack: { type: Array, required: true },
+    price: { type: Number, required: true },
+    avatar: { type: Array, required: true },
+    category: { type: Array, required: true },
+    description: { type: String },
+    client: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ClientModel' }],
+    from: { type: Date, default: Date.now, required: true },
     to: { type: Date, default: Date.now },
 });
 const ProjectModel = mongoose.model("projects", ProjectSchema);
