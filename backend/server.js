@@ -10,7 +10,7 @@ const db_uri = process.env.DB_URI;
 const SkillModel = require("./models/Skill");
 const ProjectModel = require("./models/Project");
 const EducationModel = require("./models/Education");
-// const EducationModel = require("./models/Education");
+const ExperienceModel = require("./models/Experience");
 
 ////////////////////////////////////////////////////////
 const app = express();
@@ -32,6 +32,33 @@ app.get('/projects', async (req, res) => {
     try {
         const projects = await ProjectModel.find();
         res.json(projects);
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+
+app.get('/skills', async (req, res) => {
+    try {
+        const skills = await SkillModel.find();
+        res.json(skills);
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+
+app.get('/education', async (req, res) => {
+    try {
+        const education = await EducationModel.find();
+        res.json(education);
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+
+app.get('/experience', async (req, res) => {
+    try {
+        const experience = await ExperienceModel.find();
+        res.json(experience);
     } catch (err) {
         res.status(500).send(err.message);
     }
