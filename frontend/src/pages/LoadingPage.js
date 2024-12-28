@@ -1,7 +1,7 @@
 /**
  * Author: James Thomas
  * Date: 2024/12/27
- * Description: Database model to manage 'clients' collection. 
+ * Description: Component of loading page.
  */
 import React from 'react'
 
