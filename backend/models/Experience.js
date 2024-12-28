@@ -1,7 +1,7 @@
 /**
  * Author: James Thomas
  * Date: 2024/12/27
- * Description: Database model to manage 'experience' collection. 
+ * Description: Database model to manage 'experiences' collection. 
  */
 const mongoose = require('mongoose');
 const ExperienceSchema = new mongoose.Schema({

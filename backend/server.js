@@ -8,6 +8,7 @@ const port = process.env.PORT;
 const db_uri = process.env.DB_URI;
 
 const SkillModel = require("./models/Skill");
+const ContactModel = require("./models/Contact");
 const ProjectModel = require("./models/Project");
 const EducationModel = require("./models/Education");
 const ExperienceModel = require("./models/Experience");
@@ -48,8 +49,8 @@ app.get('/skills', async (req, res) => {
 
 app.get('/educations', async (req, res) => {
     try {
-        const education = await EducationModel.find();
-        res.json(education);
+        const educations = await EducationModel.find();
+        res.json(educations);
     } catch (err) {
         res.status(500).send(err.message);
     }
@@ -57,8 +58,17 @@ app.get('/educations', async (req, res) => {
 
 app.get('/experiences', async (req, res) => {
     try {
-        const experience = await ExperienceModel.find();
-        res.json(experience);
+        const experiences = await ExperienceModel.find();
+        res.json(experiences);
+    } catch (err) {
+        res.status(500).send(err.message);
+    }
+});
+
+app.get('/contacts', async (req, res) => {
+    try {
+        const contacts = await ContactModel.find();
+        res.json(contacts);
     } catch (err) {
         res.status(500).send(err.message);
     }
