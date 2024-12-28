@@ -1,21 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+//======================================================================
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import routes from './routes/routes';
+
+//======================================================================
 function App() {
   return (
+    //==================================================================
     <BrowserRouter>
       <Routes>
-        <Route>
-          {/* <div className="App">
-            <header className="App-header">
-
-            </header>
-          </div> */}
-        </Route>
+        {routes.map(({ path, element }, index) => {
+          return (
+            <Route
+              key={index}
+              path={path}
+              element={element} />
+          )
+        })}
       </Routes>
     </BrowserRouter>
+    //==================================================================
   );
 }
-
 export default App;
