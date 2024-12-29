@@ -12,8 +12,8 @@ const EducationSchema = new mongoose.Schema({
         city: { type: String },
         school: { type: String, required: true, unique: true },
     },
-    from: { type: Date, default: Date.now, required: true },
-    to: { type: Date, default: Date.now },
+    from: { type: String, default: Date.now.year, required: true },
+    to: { type: String, default: Date.now.year },
 });
 const EducationModel = mongoose.model("educations", EducationSchema);
 module.exports = EducationModel;

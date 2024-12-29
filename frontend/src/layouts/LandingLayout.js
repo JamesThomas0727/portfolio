@@ -5,8 +5,8 @@
  */
 import React from 'react'
 
-import { Dashboard, Footer, NavBar, EmailBox, ProjectCard, TimeLineItem } from '../components'
-import { Box } from '@mui/material';
+import { Dashboard, Footer, NavBar, EmailBox, ProjectGallery, TimeLineItem, Profile, SkillGallery } from '../components'
+import { Box, Typography } from '@mui/material';
 
 export default function LandingLayout(props) {
 
@@ -24,19 +24,25 @@ export default function LandingLayout(props) {
       <div id="home">
         <Dashboard contacts={contacts} />
       </div>
-
-      <div id="skills">
-        <Box>
-          {skills.map((item, index) => {
-            return (
-              <div key={index}>sdflkasdfaldjfasdjfklasd</div>
-            )
-          })}
-        </Box>
+      <div id="about" className='flex flex-col items-center justify-center text-center'>
+        <Profile skills={skills} />
       </div>
 
-      <div id='projects'>
-        <Box>
+      <div id="skills" className='flex flex-col items-center justify-center text-center my-5 py-5'>
+        <SkillGallery />
+      </div>
+
+      <div id='projects' className='flex flex-col items-center justify-center text-center my-5 py-5'>
+        {/* <Box>
+          <Typography
+            variant="h4"
+            sx={{
+              marginTop: '20px',
+            }}
+            className="text-red-500 text-sm md:text-base max-w-2xl my-5 py-5"
+          >
+            Projects
+          </Typography>
           {projects.map((item, index) => {
             return (
               <ProjectCard
@@ -45,19 +51,38 @@ export default function LandingLayout(props) {
               />
             )
           })}
-        </Box>
+        </Box> */}
+        <ProjectGallery />
       </div>
 
-      <div id="experience">
+      <div id="experience" className='flex flex-col items-center justify-center text-center my-5 py-5'>
         <Box>
+          <Typography
+            variant="h4"
+            sx={{
+              marginTop: '20px',
+            }}
+            className="text-red-500 text-sm md:text-base max-w-2xl my-5 py-5"
+          >
+            Experience
+          </Typography>
           <TimeLineItem
             data={experiences}
           />
         </Box>
       </div>
 
-      <div id='education'>
+      <div id='education' className='flex flex-col items-center justify-center text-center my-5 py-5'>
         <Box>
+          <Typography
+            variant="h4"
+            sx={{
+              marginTop: '20px',
+            }}
+            className="text-blue-500 text-sm md:text-base max-w-2xl my-5 py-5"
+          >
+            Education
+          </Typography>
           <TimeLineItem
             data={educations}
           />

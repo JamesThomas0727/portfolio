@@ -18,7 +18,7 @@ const scrollToPosition = (id) => {
     console.error("Element not found!");
   }
   window.scrollTo({
-    top: globalPosition.top,
+    top: globalPosition.top - 30,
     behavior: "smooth",
   });
 }

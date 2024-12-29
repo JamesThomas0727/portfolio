@@ -68,7 +68,6 @@ const NavBar = () => {
                         }}
                         onClick={() => { window.location.href = '/' }}
                     >
-                        James Thomas
                     </Typography>
                     <div className="hidden md:flex space-x-4">
                         {navItems.map((item) => {

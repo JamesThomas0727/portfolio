@@ -6,7 +6,7 @@
 
 import React from "react";
 
-const Item = ({ isLeft, title, location, description, date }) => {
+const Item = ({ isLeft, title, location, description, from, to }) => {
     return (
         <div className={`flex items-center ${isLeft ? "flex-row-reverse" : ""}`}>
             <div
@@ -25,7 +25,7 @@ const Item = ({ isLeft, title, location, description, date }) => {
                 className={`bg-blue-500 text-white px-4 py-1 rounded-md shadow-md ${isLeft ? "mr-4" : "ml-4"
                     }`}
             >
-                {date}
+                {from} ~ {to}
             </div>
         </div>
     );
@@ -33,21 +33,11 @@ const Item = ({ isLeft, title, location, description, date }) => {
 
 const TimelineItem = (props) => {
     const timelineData = props.data;
-
-    // const timelineData = [
-    //     {
-    //         title: "Shenzhen University, Computer Science",
-    //         location: "Guangdong Province, China",
-    //         description: "SZU is strong in fields such as engineering and computer science.",
-    //         date: "Jun 2010 - Jun 2014",
-    //     },
-    //     {
-    //         title: "Stanford University, Software Engineering",
-    //         location: "California, USA",
-    //         description: "Focused on AI research and innovative software technologies.",
-    //         date: "Sep 2015 - Jun 2019",
-    //     },
-    // ];
+    // if(timelineData.length !== 0){
+    //     for (let key in timelineData[0]){
+    //         title = 
+    //     }
+    // }
 
     return (
         <div className="flex flex-col items-center space-y-12 mt-12">
@@ -55,10 +45,14 @@ const TimelineItem = (props) => {
                 <Item
                     key={index}
                     isLeft={index % 2 === 0}
-                    title={item.title}
-                    location={item.location}
-                    description={item.description}
-                    date={item.date}
+                    title={item.what}
+                    location={Array.isArray(item.where) ?
+                        item.where.join(', ') :
+                        (item.where.name) ? item.where.name :
+                            item.where}
+                    description={(item.description) ? item.description : ""}
+                    from={(item.from) ? item.from : "Unknown"}
+                    to={(item.to) ? item.to : 'Now'}
                 />
             ))}
         </div>

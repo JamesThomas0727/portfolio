@@ -9,8 +9,8 @@ const ExperienceSchema = new mongoose.Schema({
     where: { type: String, required: true },
     projects: { type: Array },
     description: { type: String },
-    from: { type: Date, default: Date.now, required: true },
-    to: { type: Date, default: Date.now },
+    from: { type: String, default: Date.now.year, required: true },
+    to: { type: String, default: Date.now.year },
 });
 const ExperienceModel = mongoose.model("experiences", ExperienceSchema);
 module.exports = ExperienceModel;
