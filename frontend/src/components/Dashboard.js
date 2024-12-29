@@ -41,8 +41,11 @@ const Dashboard = (props) => {
                     Full-stack Developer
                 </Typography>
                 <Typography
-                    variant="h6"
-                    className="text-blue-800 text-sm md:text-base max-w-2xl mb-8"
+                    variant="h5"
+                    sx={{
+                        marginTop: '20px',
+                    }}
+                    className="text-blue-900 text-sm md:text-base max-w-2xl mb-8"
                 >
                     I would like to collaborate with you.
                 </Typography>
@@ -61,9 +64,10 @@ const Dashboard = (props) => {
                         onClick={() => { handleClick('about') }}
                         sx={{
                             textTransform: 'none',
+                            backgroundColor: '#0d9488'
                         }}
                         variant="contained"
-                        className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-lg"
+                        className="hover:bg-blue-500 bg-teal-600 text-white px-6 py-2 rounded-lg"
                     >
                         About Me
                     </Button>

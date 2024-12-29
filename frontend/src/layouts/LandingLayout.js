@@ -27,9 +27,9 @@ export default function LandingLayout(props) {
 
       <div id="skills">
         <Box>
-          {skills.map((item) => {
+          {skills.map((item, index) => {
             return (
-              <div key={item}>sdflkasdfaldjfasdjfklasd</div>
+              <div key={index}>sdflkasdfaldjfasdjfklasd</div>
             )
           })}
         </Box>
@@ -37,21 +37,21 @@ export default function LandingLayout(props) {
 
       <div id='projects'>
         <Box>
-          {projects.map((item) => {
+          {projects.map((item, index) => {
             return (
               <ProjectCard
                 project={item}
-                key={item}
+                key={index}
               />
             )
           })}
         </Box>
       </div>
 
-      {/* <div id="experience">
+      <div id="experience">
         <Box>
           <TimeLineItem
-            experiences={experiences}
+            data={experiences}
           />
         </Box>
       </div>
@@ -59,10 +59,10 @@ export default function LandingLayout(props) {
       <div id='education'>
         <Box>
           <TimeLineItem
-            educations={educations}
+            data={educations}
           />
         </Box>
-      </div> */}
+      </div>
 
       <div id="contact" >
         <EmailBox />

@@ -10,11 +10,18 @@ const EmailBox = () => {
     return (
         <div className="max-h-fit border-none flex items-center justify-center bg-gradient-to-r from-blue-400 to-purple-500">
             <Box
-                className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+                className="bg-white p-8 rounded-lg shadow-md w-full"
                 sx={{
                     margin: '100px',
                     border: 'none',
-                    maxWidth: "60%",
+                    maxWidth: {
+                        md: "50%",
+                        lg: "40%",
+                    },
+                    '@media (max-width: 768px)': {
+                        maxWidth: "100%",
+                        margin: '25px',
+                    },
                 }}
             >
                 <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
