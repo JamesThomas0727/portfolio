@@ -28,20 +28,21 @@ export default function LandingLayout(props) {
         <Profile skills={skills} />
       </div>
 
-      <div id="skills" className='flex flex-col items-center justify-center text-center my-5 py-5'>
+      <div id="skills" className='flex flex-col items-center justify-center text-center'>
         <SkillGallery />
       </div>
 
-      <div id='projects' className='flex flex-col items-center justify-center text-center my-5 py-5'>
+      <div id='projects' className='flex flex-col items-center justify-center text-center'>
         <ProjectGallery projects={projects} />
       </div>
 
-      <div id="experience" className='flex flex-col items-center justify-center text-center my-5 py-5'>
+      <div id="experience" className='flex flex-col items-center justify-center text-center w-full'>
         <Box>
           <Typography
             variant="h4"
             sx={{
               marginTop: '20px',
+              width: '100%',
             }}
             className="text-red-500 text-sm md:text-base max-w-2xl my-5 py-5"
           >

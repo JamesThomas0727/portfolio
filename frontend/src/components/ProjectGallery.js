@@ -10,7 +10,7 @@ const ProjectGallery = (props) => {
     const projects = props.projects;
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-100 w-full">
             {projects.map((project, index) => (
                 <ProjectCard
                     key={index}
