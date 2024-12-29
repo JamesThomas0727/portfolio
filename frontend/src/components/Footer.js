@@ -3,10 +3,16 @@
  * Date: 2024/12/28
  * Description: Component for footer bar.
  */
-import React from 'react'
+import React from 'react';
 
-export default function Footer() {
-  return (
-    <div>Footer</div>
-  )
-}
+const Footer = () => {
+    return (
+        <footer className="mt-8 border-t  pt-4 text-center bg-gray-600 text-white py-6">
+            &copy; {new Date().getFullYear()} James Thomas | Back-end Developer
+            &nbsp;&nbsp;&nbsp;
+            All rights reserved.
+        </footer>
+    );
+};
+
+export default Footer;

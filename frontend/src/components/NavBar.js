@@ -43,7 +43,8 @@ function DrawerAppBar(props) {
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar component="nav" sx={{
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
+                position: "static",
             }}>
                 <Toolbar sx={{
                 }}>

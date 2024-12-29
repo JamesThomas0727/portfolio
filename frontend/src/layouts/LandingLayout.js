@@ -1,8 +1,13 @@
 import React from 'react'
 
-import { NavBar } from '../components'
+import { Footer, NavBar } from '../components'
 export default function LandingLayout() {
   return (
-    <NavBar />
+    <>
+      <NavBar />
+      <div>
+      </div>
+      <Footer />
+    </>
   )
 }
