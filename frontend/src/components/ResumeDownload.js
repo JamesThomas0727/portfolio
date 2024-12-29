@@ -1,3 +1,8 @@
+/**
+ * Author: James Thomas
+ * Date: 2024/12/30
+ * Description: Component of resume download button
+ */
 import React from 'react';
 import { Button } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';

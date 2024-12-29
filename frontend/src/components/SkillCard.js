@@ -1,3 +1,8 @@
+/**
+ * Author: James Thomas
+ * Date: 2024/12/30
+ * Description: Component of skill card.
+ */
 import React from 'react';
 import { Box, Typography, LinearProgress } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -13,15 +18,10 @@ const SkillCard = ({ logo, skillName, level }) => {
             className="bg-white p-4 shadow-lg rounded-lg"
         >
             <Box className="flex flex-col items-center">
-                {/* Logo */}
                 <img src={logo} alt={skillName} className="w-16 h-16 mb-4 object-contain" />
-
-                {/* Skill Name */}
                 <Typography variant="h6" className="mb-2">
                     {skillName}
                 </Typography>
-
-                {/* Skill Level */}
                 <Box sx={{ width: '100%', mt: 2 }}>
                     <LinearProgress
                         variant="determinate"

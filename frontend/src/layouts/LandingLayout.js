@@ -33,26 +33,7 @@ export default function LandingLayout(props) {
       </div>
 
       <div id='projects' className='flex flex-col items-center justify-center text-center my-5 py-5'>
-        {/* <Box>
-          <Typography
-            variant="h4"
-            sx={{
-              marginTop: '20px',
-            }}
-            className="text-red-500 text-sm md:text-base max-w-2xl my-5 py-5"
-          >
-            Projects
-          </Typography>
-          {projects.map((item, index) => {
-            return (
-              <ProjectCard
-                project={item}
-                key={index}
-              />
-            )
-          })}
-        </Box> */}
-        <ProjectGallery />
+        <ProjectGallery projects={projects} />
       </div>
 
       <div id="experience" className='flex flex-col items-center justify-center text-center my-5 py-5'>

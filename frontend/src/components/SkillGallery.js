@@ -1,24 +1,29 @@
+/**
+ * Author: James Thomas
+ * Date: 2024/12/30
+ * Description: Component of skill card gallery.
+ */
 import React from 'react';
 import SkillCard from './SkillCard';
 
 const skills = [
     {
-        logo: 'https://cdn-icons-png.flaticon.com/512/732/732212.png', // HTML logo
+        logo: 'https://cdn-icons-png.flaticon.com/512/732/732212.png',
         skillName: 'HTML',
         level: 90,
     },
     {
-        logo: 'https://cdn-icons-png.flaticon.com/512/732/732190.png', // CSS logo
+        logo: 'https://cdn-icons-png.flaticon.com/512/732/732190.png',
         skillName: 'CSS',
         level: 85,
     },
     {
-        logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png', // JavaScript logo
+        logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png',
         skillName: 'JavaScript',
         level: 80,
     },
     {
-        logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968381.png', // React logo
+        logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968381.png',
         skillName: 'React',
         level: 75,
     },

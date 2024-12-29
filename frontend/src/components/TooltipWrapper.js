@@ -1,3 +1,8 @@
+/**
+ * Author: James Thomas
+ * Date: 2024/12/30
+ * Description: Component of tooltip wrapper.
+ */
 import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 

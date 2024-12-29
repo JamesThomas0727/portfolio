@@ -11,9 +11,10 @@ const ProjectSchema = new mongoose.Schema({
     avatar: { type: Array, required: true },
     category: { type: Array, required: true },
     description: { type: String },
+    title: { type: String },
     client: [{ type: mongoose.Schema.Types.ObjectId, ref: 'ClientModel' }],
-    from: { type: Date, default: Date.now, required: true },
-    to: { type: Date, default: Date.now },
+    from: { type: String, default: Date.now.year, required: true },
+    to: { type: String, default: Date.now.year },
 });
 const ProjectModel = mongoose.model("projects", ProjectSchema);
 module.exports = ProjectModel;
