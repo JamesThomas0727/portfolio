@@ -4,3 +4,5 @@
  * Description: Index components as default and Export those.
  */
 export { default as NavBar } from './NavBar';
+export { default as Footer } from './Footer';
+
