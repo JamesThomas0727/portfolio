@@ -16,6 +16,8 @@ export { default as LoadingPanel } from './LoadingPanel';
 export { default as TimeLineItem } from './TimeLineItem';
 export { default as ProjectGallery } from './ProjectGallery';
 export { default as TooltipWrapper } from './TooltipWrapper';
+export { default as ResumeDownload } from './ResumeDownload';
+
 
 
 

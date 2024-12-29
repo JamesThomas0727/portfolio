@@ -1,3 +1,8 @@
+/**
+ * Author: James Thomas
+ * Date: 2024/12/30
+ * Description: Component of project card.
+ */
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -70,7 +75,7 @@ const ProjectCard = ({ title, description, images, link }) => {
                 </button>
             </Box>
             <div className="flex space-x-2 mt-2">
-                {images.map((_, index) => (
+                {images.map((index) => (
                     <div
                         key={index}
                         className={`w-3 h-3 rounded-full cursor-pointer ${currentIndex === index ? 'bg-blue-500' : 'bg-gray-300'
@@ -92,8 +97,13 @@ const ProjectCard = ({ title, description, images, link }) => {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
+                sx={{
+                    margin: '20px',
+                    textTransform: 'none',
+                }}
+                onClick={() => { alert('Sorry, coming soon!') }}
             >
-                View Project
+                View
             </Button>
             {/* // </motion.div> */}
         </div >

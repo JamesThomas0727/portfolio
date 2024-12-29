@@ -73,7 +73,16 @@ app.get('/contacts', async (req, res) => {
         res.status(500).send(err.message);
     }
 });
-
+//////////////////////////////////////////////////////////////
+app.get('/send-mail', async (req, res) => {
+    try {
+        const data = req.query;
+        console.log('sent email:', data);
+    }
+    catch (err) {
+        res.status(500).send(err.message);
+    }
+})
 //////////////////////////////////////////////////////////////
 app.listen(port, () => {
     console.log(`Server running at ${host}:${port}`)

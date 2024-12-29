@@ -14,11 +14,11 @@ import axios from 'axios';
 export default function LandingPage() {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [skills, setSkills] = useState(["dasdffw", "dasfdase"]);
-    const [projects, setProjects] = useState(["dazvcghfwer", "dasfdasdsds"]);
-    const [contacts, setContacts] = useState(["davertertcaf", "dasfdweras"]);
-    const [experiences, setExperiences] = useState(["dazxcvf", "dassdadcsdfdas"]);
-    const [educations, setEducations] = useState(["sfgsdasdf", "dasfaaaaaaewdas"]);
+    const [skills, setSkills] = useState([]);
+    const [projects, setProjects] = useState([]);
+    const [contacts, setContacts] = useState([]);
+    const [experiences, setExperiences] = useState([]);
+    const [educations, setEducations] = useState([]);
 
     useEffect(() => {
         const timer = setTimeout(() => {
