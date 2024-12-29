@@ -6,7 +6,7 @@
 
 import React from "react";
 
-const TimelineItem = ({ isLeft, title, location, description, date }) => {
+const Item = ({ isLeft, title, location, description, date }) => {
     return (
         <div className={`flex items-center ${isLeft ? "flex-row-reverse" : ""}`}>
             {/* Content Box */}
@@ -36,7 +36,7 @@ const TimelineItem = ({ isLeft, title, location, description, date }) => {
     );
 };
 
-const Timeline = () => {
+const TimelineItem = () => {
     const timelineData = [
         {
             title: "Shenzhen University, Computer Science",
@@ -55,7 +55,7 @@ const Timeline = () => {
     return (
         <div className="flex flex-col items-center space-y-12 mt-12">
             {timelineData.map((item, index) => (
-                <TimelineItem
+                <Item
                     key={index}
                     isLeft={index % 2 === 0}
                     title={item.title}
@@ -68,4 +68,4 @@ const Timeline = () => {
     );
 };
 
-export default Timeline;
+export default TimelineItem;

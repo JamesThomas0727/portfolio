@@ -3,18 +3,14 @@
  * Date: 2024/12/29
  * Description: Function to fetch data from back-end side.
  */
-
+import axios from 'axios';
 const fetchData = (url) => {
-    fetch(url)
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error('HTTP error: ' + res.status);
-            }
-            return res.json();
+    const data = axios.get(url)
+        .then(response => {
+            return response.data;
         })
-        .then((data) => (data))
-        .catch((err) =>
-            console.error("Fetch data from back-end side: " + err));
+        .catch(error => console.error('Error fetching data:', error));
+    return data;
 }
 
 export default fetchData;

@@ -3,21 +3,23 @@
  * Date: 2024/12/28
  * Description: Component of dashboard page.
  */
-import React, { useRef } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Typography, Button, IconButton, } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import MessageIcon from '@mui/icons-material/Message';
+
 import ScrollButton from './ScrollButton';
 import TooltipWrapper from "./TooltipWrapper";
-
-
+import scrollToPosition from "../utils/ScrollToPosition";
 const Dashboard = () => {
-    const posRef = useRef(null);
-    const handleClick = (ref) => {
-        posRef.current.scrollIntoView({ behavior: "smooth" });
+    const handleClick = (id) => {
+        scrollToPosition(id);
     }
 
+    const navigate = useNavigate();
+    
     return (
         <div className="min-h-screen relative flex flex-row justify-center items-center bg-gradient-to-r from-blue-400 to-purple-500 border-none">
             <div className="flex flex-col items-center justify-center text-center my-5 py-20">
@@ -28,20 +30,20 @@ const Dashboard = () => {
                     James Thomas
                 </Typography>
                 <Typography
-                    variant="h6"
+                    variant="h5"
                     className="text-white font-medium text-lg md:text-xl mb-6"
                 >
                     Full-stack Developer
                 </Typography>
                 <Typography
-                    variant="body1"
-                    fontSize={'xl'}
-                    className="text-gray-200 text-sm md:text-base max-w-2xl mb-8"
+                    variant="h6"
+                    className="text-blue-800 text-sm md:text-base max-w-2xl mb-8"
                 >
                     I would like to collaborate with you.
                 </Typography>
                 <div className="flex  justify-center space-x-4 mt-9 top-10">
                     <Button
+                        onClick={() => { handleClick('projects') }}
                         sx={{
                             textTransform: 'none',
                         }}
@@ -51,6 +53,7 @@ const Dashboard = () => {
                         Projects
                     </Button>
                     <Button
+                        onClick={() => { handleClick('about') }}
                         sx={{
                             textTransform: 'none',
                         }}
@@ -65,6 +68,7 @@ const Dashboard = () => {
                         <IconButton
                             className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
                             aria-label="GitHub"
+                            onClick={() => { navigate('/github') }}
                         >
                             <GitHubIcon className="text-3xl" />
                         </IconButton>
@@ -73,6 +77,7 @@ const Dashboard = () => {
                         <IconButton
                             className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
                             aria-label="Email"
+                            onClick={() => { window.location.href = (`mailto:${'s'}`) }}
                         >
                             <EmailIcon className="text-3xl" />
                         </IconButton>

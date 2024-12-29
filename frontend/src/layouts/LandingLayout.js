@@ -3,46 +3,81 @@
  * Date: 2024/12/29
  * Description: Layout component to manage landing page.
  */
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-import { Dashboard, Footer, NavBar, EmailBox, TimeLine, ProjectCard } from '../components'
+import { Dashboard, Footer, NavBar, EmailBox, ProjectCard, TimeLineItem } from '../components'
 import { Box } from '@mui/material';
-import fetchData from '../utils/FetchData';
-import Timeline from '../components/TimeLine';
 
-export default function LandingLayout() {
+export default function LandingLayout(props) {
 
-  const [education, setEducation] = useState(["daf", "dasfdas"]);
-  useEffect(() => {
-    // const data = fetchData('localhost:5000/projects');
-    // console.log(data);
-    // setEducation(data);
-  }, []);
+  const skills = props.skills;
+  const educations = props.educations;
+  const experiences = props.experiences;
+  const projects = props.projects;
+  const contacts = props.contacts;
 
   return (
     <div className='static'>
-      <NavBar id="navbar" />
-      <div style={{ flex: 1 }}>
-        <Dashboard id="dashboard" />
+      <div id="navbar">
+        <NavBar id="navbar" />
+      </div>
+      <div id="home">
+        <Dashboard contacts={contacts} />
       </div>
       {/* ======================================= */}
-      <Box>
-        {education.map((item) => {
-          return (
-            <Timeline
-              key={item}
-              education={item} />
-          )
-        })}
-      </Box>
+      <div id="skills">
+        <Box>
+          {skills.map((item) => {
+            return (
+              <div key={item}>sdflkasdfaldjfasdjfklasd</div>
+            )
+          })}
+        </Box>
+      </div>
       {/* ======================================= */}
-      <Box>
-        <TimeLine />
-      </Box>
+      <div id='projects'>
+        <Box>
+          {projects.map((item) => {
+            return (
+              <ProjectCard
+                key={item}
+              />
+            )
+          })}
+        </Box>
+      </div>
       {/* ======================================= */}
+      <div id="experience">
+        <Box>
+          {experiences.map((item) => {
+            return (
+              <TimeLineItem
+                key={item}
+                education={item} />
+            )
+          })}
+        </Box>
+      </div>
+      {/* ======================================= */}
+      <div id='education'>
+        <Box>
+          {educations.map((item) => {
+            return (
+              <TimeLineItem
+                key={item}
+                education={item} />
+            )
+          })}
+        </Box>
+      </div>
 
-      <EmailBox id="contact" />
-      <Footer id="footer" />
+      {/* ======================================= */}
+      <div id="contact" >
+        <EmailBox />
+      </div>
+      <div id="footer">
+        <Footer />
+      </div>
     </div>
   )
 }

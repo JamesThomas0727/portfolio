@@ -20,11 +20,16 @@ import {
     Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import scrollToPosition from '../utils/ScrollToPosition';
 
-const navItems = ["About", "Skills", "Experience", "Education", "Contact"];
+const navItems = ["Home", "Skills", "Experience", "Education", "Contact"];
 
 const NavBar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
+
+    const handleClick = (id) => {
+        scrollToPosition(id);
+    }
 
     const toggleDrawer = (open) => (event) => {
         if (
@@ -77,6 +82,7 @@ const NavBar = () => {
                                         },
                                     }}
                                     key={item}
+                                    onClick={() => { handleClick(item.toLocaleLowerCase()) }}
                                     color="inherit" className="hover:text-teal-400">
                                     {item}
                                 </Button>
@@ -93,7 +99,7 @@ const NavBar = () => {
                                 sm: 'block',
                             },
                             '@media (min-width: 768px)': {
-                                display: 'none',
+                                display: 'hidden',
                             },
                         }}
                     >
@@ -112,7 +118,8 @@ const NavBar = () => {
                     <List>
                         {navItems.map((text, index) => (
                             <ListItem button key={index}>
-                                <ListItemText primary={text} />
+                                <ListItemText primary={text}
+                                    onClick={() => { handleClick(text.toLocaleLowerCase()) }} />
                             </ListItem>
                         ))}
                     </List>
