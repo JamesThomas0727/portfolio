@@ -5,7 +5,7 @@
  */
 const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
-    url: { type: String, required: true },
+    url: { type: String, },
     stack: { type: Array, required: true },
     price: { type: Number, required: true },
     avatar: { type: Array, required: true },

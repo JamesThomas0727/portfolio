@@ -3,17 +3,24 @@
  * Date: 2024/12/28
  * Description: Component of dashboard page.
  */
-import React from "react";
+import React, { useRef } from "react";
 import { Typography, Button, IconButton, } from "@mui/material";
-import ScrollButton from './ScrollButton'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import MessageIcon from '@mui/icons-material/Message';
+import ScrollButton from './ScrollButton';
+import TooltipWrapper from "./TooltipWrapper";
+
 
 const Dashboard = () => {
+    const posRef = useRef(null);
+    const handleClick = (ref) => {
+        posRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+
     return (
-        <div className="min-h-screen relative bg-gradient-to-r from-blue-400 to-purple-500 border-none">
-            <div className="flex flex-col items-center justify-center text-center py-20">
+        <div className="min-h-screen relative flex flex-row justify-center items-center bg-gradient-to-r from-blue-400 to-purple-500 border-none">
+            <div className="flex flex-col items-center justify-center text-center my-5 py-20">
                 <Typography
                     variant="h2"
                     className="text-white font-bold text-4xl md:text-5xl mb-4"
@@ -54,24 +61,31 @@ const Dashboard = () => {
                     </Button>
                 </div>
                 <div className="flex justify-center space-x-4 mt-10">
-                    <IconButton
-                        className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
-                        aria-label="GitHub"
-                    >
-                        <GitHubIcon className="text-3xl" />
-                    </IconButton>
-                    <IconButton
-                        className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
-                        aria-label="Email"
-                    >
-                        <EmailIcon className="text-3xl" />
-                    </IconButton>
-                    <IconButton
-                        className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
-                        aria-label="LinkedIn"
-                    >
-                        <LinkedInIcon className="text-3xl" />
-                    </IconButton>
+                    <TooltipWrapper tooltipText={'On GitHub'}>
+                        <IconButton
+                            className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
+                            aria-label="GitHub"
+                        >
+                            <GitHubIcon className="text-3xl" />
+                        </IconButton>
+                    </TooltipWrapper>
+                    <TooltipWrapper tooltipText={'On Gmail'}>
+                        <IconButton
+                            className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
+                            aria-label="Email"
+                        >
+                            <EmailIcon className="text-3xl" />
+                        </IconButton>
+                    </TooltipWrapper>
+                    <TooltipWrapper tooltipText={'On direct message'}>
+                        <IconButton
+                            className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
+                            aria-label="Message"
+                            onClick={() => { handleClick('contact') }}
+                        >
+                            <MessageIcon className="text-3xl" />
+                        </IconButton>
+                    </TooltipWrapper>
                 </div>
             </div>
             <ScrollButton />
