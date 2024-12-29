@@ -9,7 +9,6 @@ import React from "react";
 const Item = ({ isLeft, title, location, description, date }) => {
     return (
         <div className={`flex items-center ${isLeft ? "flex-row-reverse" : ""}`}>
-            {/* Content Box */}
             <div
                 className={`bg-white border rounded-lg p-4 shadow-lg w-64 ${isLeft ? "ml-4" : "mr-4"
                     }`}
@@ -18,14 +17,10 @@ const Item = ({ isLeft, title, location, description, date }) => {
                 <p className="text-blue-600">{location}</p>
                 <p className="text-sm text-gray-600 mt-2">{description}</p>
             </div>
-
-            {/* Timeline Separator */}
             <div className="relative">
                 <div className="w-1 h-full bg-blue-500"></div>
                 <div className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full"></div>
             </div>
-
-            {/* Date Box */}
             <div
                 className={`bg-blue-500 text-white px-4 py-1 rounded-md shadow-md ${isLeft ? "mr-4" : "ml-4"
                     }`}
@@ -36,7 +31,9 @@ const Item = ({ isLeft, title, location, description, date }) => {
     );
 };
 
-const TimelineItem = () => {
+const TimelineItem = (props) => {
+    // const timelineData = props.data;
+
     const timelineData = [
         {
             title: "Shenzhen University, Computer Science",

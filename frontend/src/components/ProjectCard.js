@@ -6,13 +6,14 @@
 import React from "react";
 import { Card, CardContent, Typography, Button } from "@mui/material";
 
-const ProjectCard = () => {
+const ProjectCard = (props) => {
+    const project = props.project;
     return (
         <Card className="max-w-sm mx-auto border rounded-lg shadow-lg overflow-hidden">
             {/* Top Section */}
             <div className="bg-blue-500 text-center py-4">
                 <img
-                    src="https://via.placeholder.com/150x50?text=thesnuslife"
+                    src="project.avatar"
                     alt="The Snus Life"
                     className="mx-auto"
                 />

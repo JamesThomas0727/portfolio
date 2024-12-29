@@ -12,29 +12,48 @@ import axios from 'axios';
 //==================================================================
 
 export default function LandingPage() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [skills, setSkills] = useState(["daf", "dasfdas"]);
-    const [projects, setProjects] = useState(["daf", "dasfdas"]);
-    const [experiences, setExperiences] = useState(["daf", "dasfdas"]);
-    const [educations, setEducation] = useState(["daf", "dasfdas"]);
-    const [contacts, setContacts] = useState(["daf", "dasfdas"]);
+
+    const [isLoading, setIsLoading] = useState(true);
+    const [skills, setSkills] = useState(["dasdffw", "dasfdase"]);
+    const [projects, setProjects] = useState(["dazvcghfwer", "dasfdasdsds"]);
+    const [contacts, setContacts] = useState(["davertertcaf", "dasfdweras"]);
+    const [experiences, setExperiences] = useState(["dazxcvf", "dassdadcsdfdas"]);
+    const [educations, setEducations] = useState(["sfgsdasdf", "dasfaaaaaaewdas"]);
 
     useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 3000);
+
+        axios.get('http://localhost:5000/skills')
+            .then(response => {
+                setSkills(response.data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        axios.get('http://localhost:5000/projects')
+            .then(response => {
+                setProjects(response.data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        axios.get('http://localhost:5000/experiences')
+            .then(response => {
+                setExperiences(response.data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
         axios.get('http://localhost:5000/educations')
             .then(response => {
-                // setEducation(response.data);
+                setEducations(response.data);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+        axios.get('http://localhost:5000/contacts')
+            .then(response => {
+                setContacts(response.data);
                 setIsLoading(false);
             })
             .catch(error => console.error('Error fetching data:', error));
+
+        return () => clearTimeout(timer);
     }, []);
-
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setIsLoading(false);
-    //     }, 3000);
-
-    //     return () => clearTimeout(timer);
-    // }, []);
 
     return (
         <>

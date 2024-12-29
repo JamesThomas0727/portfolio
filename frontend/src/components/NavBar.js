@@ -99,7 +99,7 @@ const NavBar = () => {
                                 sm: 'block',
                             },
                             '@media (min-width: 768px)': {
-                                display: 'hidden',
+                                display: 'none',
                             },
                         }}
                     >

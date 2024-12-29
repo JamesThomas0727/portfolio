@@ -11,10 +11,10 @@ import { Box } from '@mui/material';
 export default function LandingLayout(props) {
 
   const skills = props.skills;
-  const educations = props.educations;
-  const experiences = props.experiences;
   const projects = props.projects;
   const contacts = props.contacts;
+  const educations = props.educations;
+  const experiences = props.experiences;
 
   return (
     <div className='static'>
@@ -24,7 +24,7 @@ export default function LandingLayout(props) {
       <div id="home">
         <Dashboard contacts={contacts} />
       </div>
-      {/* ======================================= */}
+
       <div id="skills">
         <Box>
           {skills.map((item) => {
@@ -34,7 +34,7 @@ export default function LandingLayout(props) {
           })}
         </Box>
       </div>
-      {/* ======================================= */}
+
       <div id='projects'>
         <Box>
           {projects.map((item) => {
@@ -46,32 +46,23 @@ export default function LandingLayout(props) {
           })}
         </Box>
       </div>
-      {/* ======================================= */}
+
       <div id="experience">
         <Box>
-          {experiences.map((item) => {
-            return (
-              <TimeLineItem
-                key={item}
-                education={item} />
-            )
-          })}
-        </Box>
-      </div>
-      {/* ======================================= */}
-      <div id='education'>
-        <Box>
-          {educations.map((item) => {
-            return (
-              <TimeLineItem
-                key={item}
-                education={item} />
-            )
-          })}
+          <TimeLineItem
+            experiences={experiences}
+          />
         </Box>
       </div>
 
-      {/* ======================================= */}
+      <div id='education'>
+        <Box>
+          <TimeLineItem
+            educations={educations}
+          />
+        </Box>
+      </div>
+
       <div id="contact" >
         <EmailBox />
       </div>
