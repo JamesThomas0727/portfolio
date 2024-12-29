@@ -40,6 +40,7 @@ export default function LandingLayout(props) {
           {projects.map((item) => {
             return (
               <ProjectCard
+                project={item}
                 key={item}
               />
             )
@@ -47,7 +48,7 @@ export default function LandingLayout(props) {
         </Box>
       </div>
 
-      <div id="experience">
+      {/* <div id="experience">
         <Box>
           <TimeLineItem
             experiences={experiences}
@@ -61,7 +62,7 @@ export default function LandingLayout(props) {
             educations={educations}
           />
         </Box>
-      </div>
+      </div> */}
 
       <div id="contact" >
         <EmailBox />

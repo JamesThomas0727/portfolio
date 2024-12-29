@@ -13,13 +13,18 @@ import MessageIcon from '@mui/icons-material/Message';
 import ScrollButton from './ScrollButton';
 import TooltipWrapper from "./TooltipWrapper";
 import scrollToPosition from "../utils/ScrollToPosition";
-const Dashboard = () => {
+const Dashboard = (props) => {
+    const contacts = props.contacts;
+
     const handleClick = (id) => {
         scrollToPosition(id);
     }
 
-    const navigate = useNavigate();
-    
+    const mailTo = () => {
+        const url = contacts[0].type === 'gmail' ? contacts[0].url : contacts[1].url;
+        window.location.href = (`mailto:${url}`)
+    }
+
     return (
         <div className="min-h-screen relative flex flex-row justify-center items-center bg-gradient-to-r from-blue-400 to-purple-500 border-none">
             <div className="flex flex-col items-center justify-center text-center my-5 py-20">
@@ -68,7 +73,9 @@ const Dashboard = () => {
                         <IconButton
                             className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
                             aria-label="GitHub"
-                            onClick={() => { navigate('/github') }}
+                            onClick={() => {
+                                window.open(contacts[1].type === 'github' ? contacts[1].url : contacts[0].url);
+                            }}
                         >
                             <GitHubIcon className="text-3xl" />
                         </IconButton>
@@ -77,7 +84,7 @@ const Dashboard = () => {
                         <IconButton
                             className="!bg-white text-white hover:!bg-gray-400 w-14 h-14"
                             aria-label="Email"
-                            onClick={() => { window.location.href = (`mailto:${'s'}`) }}
+                            onClick={mailTo}
                         >
                             <EmailIcon className="text-3xl" />
                         </IconButton>

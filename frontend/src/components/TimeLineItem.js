@@ -32,22 +32,22 @@ const Item = ({ isLeft, title, location, description, date }) => {
 };
 
 const TimelineItem = (props) => {
-    // const timelineData = props.data;
+    const timelineData = props.data;
 
-    const timelineData = [
-        {
-            title: "Shenzhen University, Computer Science",
-            location: "Guangdong Province, China",
-            description: "SZU is strong in fields such as engineering and computer science.",
-            date: "Jun 2010 - Jun 2014",
-        },
-        {
-            title: "Stanford University, Software Engineering",
-            location: "California, USA",
-            description: "Focused on AI research and innovative software technologies.",
-            date: "Sep 2015 - Jun 2019",
-        },
-    ];
+    // const timelineData = [
+    //     {
+    //         title: "Shenzhen University, Computer Science",
+    //         location: "Guangdong Province, China",
+    //         description: "SZU is strong in fields such as engineering and computer science.",
+    //         date: "Jun 2010 - Jun 2014",
+    //     },
+    //     {
+    //         title: "Stanford University, Software Engineering",
+    //         location: "California, USA",
+    //         description: "Focused on AI research and innovative software technologies.",
+    //         date: "Sep 2015 - Jun 2019",
+    //     },
+    // ];
 
     return (
         <div className="flex flex-col items-center space-y-12 mt-12">
