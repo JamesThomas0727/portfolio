@@ -4,117 +4,122 @@
  * Description: Component for top navigation bar.
  */
 
-import React, { useState } from 'react'
-import { Divider, Drawer, Avatar, AppBar, Toolbar, List, ListItem, ListItemButton, ListItemText, Button, CssBaseline, Typography, Box, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    IconButton,
+    Drawer,
+    List,
+    ListItem,
+    ListItemText,
+    CssBaseline,
+    Box,
+    Button,
+    Avatar,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const navItems = ["About", "Skills", "Experience", "Education", "Contact"];
-const drawerWidth = 240;
 
-function DrawerAppBar(props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = useState(false);
+const NavBar = () => {
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
+    const toggleDrawer = (open) => (event) => {
+        if (
+            event.type === "keydown" &&
+            (event.key === "Tab" || event.key === "Shift")
+        ) {
+            return;
+        }
+        setDrawerOpen(open);
     };
 
-    const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography sx={{ my: 2 }}>
-                James Thomas
-            </Typography>
-            <Divider />
-            <List>
-                {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
-
     return (
-        <Box sx={{ display: 'flex' }}>
+        <div className="fixed w-full z-50">
             <CssBaseline />
-            <AppBar component="nav" sx={{
-                backgroundColor: 'transparent',
-                position: "static",
-            }}>
-                <Toolbar sx={{
-                }}>
+            <AppBar position="static"
+                className="bg-gray-800">
+                <Toolbar>
                     <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
                         sx={{
-                            flexGrow: 1,
-                            left: '40px',
-                            justifyContent: 'left',
-                            mr: 2, display: { sm: 'none' },
-                            color: 'gray',
-                            component: 'div'
-                        }}>
+                            '&:hover': {
+                                transform: 'scale(1.05, 1.05)',
+                            },
+                        }}
+                        onClick={() => { window.location.href = '/' }}
+                        edge="start" color="inherit" aria-label="logo">
+                        <Avatar src='assets/images/avatars/avatar1.png' alt='James Thomas' />
+                    </IconButton>
+                    <Typography
+                        variant="h6"
+                        className="flex-1 text-white font-bold text-lg"
+                        sx={{
+                            '&:hover': {
+                                color: '#2dd4bf',
+                                cursor: 'pointer',
+                            },
+                        }}
+                        onClick={() => { window.location.href = '/' }}
+                    >
+                        James Thomas
+                    </Typography>
+                    <div className="hidden md:flex space-x-4">
+                        {navItems.map((item) => {
+                            return (
+                                <Button
+                                    sx={{
+                                        textTransform: 'none',
+                                        '&:hover': {
+                                            transform: 'scale(1.05, 1.05)',
+                                            backgroundColor: 'transparent',
+                                        },
+                                    }}
+                                    key={item}
+                                    color="inherit" className="hover:text-teal-400">
+                                    {item}
+                                </Button>
+                            )
+                        })}
+                    </div>
+                    <IconButton
+                        edge="end"
+                        color="inherit"
+                        aria-label="menu"
+                        onClick={toggleDrawer(true)}
+                        sx={{
+                            display: {
+                                sm: 'block',
+                            },
+                            '@media (min-width: 768px)': {
+                                display: 'none',
+                            },
+                        }}
+                    >
                         <MenuIcon />
                     </IconButton>
-                    <IconButton
-                        sx={{
-                            p: 0,
-                            marginRight: '30px',
-                            '&:hover': {
-                                transform: 'scale(1.2, 1.2)',
-                                background: 'none',
-                            },
-                        }}>
-                        <Avatar alt="James Thomas" src="/assets/images/avatars/avatar1.png" />
-                    </IconButton>
-                    <Box sx={{
-                        display: { xs: 'none', sm: 'block' },
-                    }}>
-                        {navItems.map((item) => (
-                            <Button key={item} sx={{
-                                color: 'gray',
-                                textTransform: 'none',
-                                '&:hover': {
-                                    color: 'blue',
-                                    transform: 'scale(1.05, 1.05)',
-                                    backgroundColor: 'transparent',
-                                },
-                                '&:active': {
-                                    backgroundColor: 'transparent',
-                                },
-                            }}>
-                                {item}
-                            </Button>
-                        ))}
-                    </Box>
                 </Toolbar>
             </AppBar>
-            <nav>
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true,
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
+            <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+                <Box
+                    sx={{ width: 250 }}
+                    role="presentation"
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}
+                    className="bg-gray-100"
                 >
-                    {drawer}
-                </Drawer>
-            </nav>
-        </Box>
+                    <List>
+                        {navItems.map((text, index) => (
+                            <ListItem button key={index}>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+            </Drawer>
+        </div>
     );
-}
+};
 
-export default DrawerAppBar;
+export default NavBar;

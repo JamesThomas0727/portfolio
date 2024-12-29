@@ -7,7 +7,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="mt-8 border-t  pt-4 text-center bg-gray-600 text-white py-6">
+        <footer className="border-t border-none pt-4 text-center bg-gray-600 text-white py-6">
             &copy; {new Date().getFullYear()} James Thomas | Back-end Developer
             &nbsp;&nbsp;&nbsp;
             All rights reserved.
